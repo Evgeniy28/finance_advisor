@@ -1,0 +1,39 @@
+@mixin container {
+  width: 85%;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  // helper
+  @include outline-red;
+
+  // From: 1230px
+  @media #{$media} and #{$large} {
+    width: 1170px;
+  }
+
+  @media #{$media} and #{$phone} {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Outline helper
+@mixin outline-blue {
+  // outline: 1px solid blue;
+}
+@mixin outline-red {
+  // outline: 1px solid red;
+}
+@mixin outline-yellow {
+  // outline: 1px solid yellow;
+}
+@mixin outline-black {
+  // outline: 1px solid black;
+}
