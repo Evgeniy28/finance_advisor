@@ -1,0 +1,53 @@
+@import 'normalize';
+@import 'variables';
+@import 'fonts';
+
+// Base styles
+body {
+  font-size: $base-font-size;
+  font-family: $fg-book, Arial, sans-serif;
+  line-height: $base-line-height;
+  color: $almost-black;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+h1 {
+  margin: 0;
+}
+
+.container {
+  @include container;
+}
+
+.btn {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+
+  font-family: $fg-book;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 26px;
+
+  vertical-align: top;
+  text-align: center;
+  text-decoration: none;
+
+  color: $almost-black;
+  background-color: $white;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

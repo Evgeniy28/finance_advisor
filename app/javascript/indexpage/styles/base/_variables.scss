@@ -1,0 +1,36 @@
+// colors
+$white        : #ffffff;
+$yellow       : #ffde00;
+$dark-blue    : #062440;
+$navy-blue    : #0d2843;
+$light-gray   : #e6e6e6;
+$grey         : #8e8e8e;
+$bg-grey      : #e9e9e8;
+$almost-black : #1d1d1d;
+
+// Typography
+$fg-book    : 'Franklin Gothic Book';
+$fg-medium  : 'Franklin Gothic Medium';
+$museo-sans : 'Museo Sans Cyrl';
+
+$base-font-size   : 16px;
+$base-line-height : 18px;
+$h1-font-size     : 36px;
+$h1-line-height   : 38px;
+
+// Breakpoints
+$xs-min : 480px;
+$sm-min : 768px;
+$md-min : 992px;
+$lg-min : 1230px;
+
+$xs-max : ($sm-min - 1); // 767px
+$sm-max : ($md-min - 1); // 991px
+$md-max : ($lg-min - 1); // 1229px
+
+$media: only screen;
+
+$phone   : (max-width: #{$xs-max});                             // from: 0      to: 767px
+$tablet  : (min-width: #{$sm-min}) and (max-width: #{$sm-max}); // from: 768px  to: 991px
+$desktop : (min-width: #{$md-min}) and (max-width: #{$md-max}); // from: 992px  to: 1229px
+$large   : (min-width: #{$lg-min});                             // from: 1230px
