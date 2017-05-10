@@ -1,0 +1,341 @@
+.deposit {
+  position: relative;
+
+  display: flex;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+  }
+  &::before {
+    content: '';
+
+    width: 54px;
+    height: 54px;
+    margin-top: 148px;
+    margin-left: -27px;
+
+    background-color: #0d2843;
+    transform: rotate(45deg);
+  }
+  &::after {
+    content: 'vs';
+
+    margin-top: 165px;
+    margin-left: -13px;
+
+    font-family: $museo-sans;
+    font-size: 27px;
+    font-weight: 500;
+
+    color: $white;
+  }
+
+  // helper
+  @include outline-blue;
+
+  &__left {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 50%;
+
+    background: $bg-grey url('../images/bg-left-deposit.jpg') no-repeat;
+    background-position: right;
+    background-size: cover;
+
+    // helper
+    @include outline-red;
+  }
+
+  &__right {
+    display: flex;
+    width: 50%;
+
+    background: $yellow url('../images/bg-right-deposit.jpg') no-repeat;
+    background-position: left;
+    background-size: cover;
+
+    // helper
+    @include outline-red;
+  }
+}
+
+.deposit-block {
+  width: 515px; // 1230px / 2 - 60px
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 68px;
+
+  // helper
+  @include outline-red;
+
+  &--pr-85 {
+    padding-right: 70px;
+  }
+  &--pl-85 {
+    padding-left: 70px;
+  }
+
+  &__title {
+    padding-top: 54px;
+    margin-bottom: 52px;
+
+    font-family: $museo-sans, Arial, sans-serif;
+    font-size: $h1-font-size;
+    line-height: $h1-line-height;
+    font-weight: 500;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 267px;
+    margin-bottom: 65px;
+
+    // helper
+    @include outline-black;
+  }
+
+  &__item {
+    position: relative;
+
+    width: 189px;
+
+    min-height: 46px;
+    margin-bottom: 34px;
+    padding-top: 11px;
+    padding-left: 68px;
+
+    font-size: 18px;
+    line-height: 20px;
+
+    // helper
+    @include outline-blue;
+
+    &:last-child {
+      margin-bottom: 0;
+
+      width: 220px;
+    }
+  }
+
+  &__call-me {
+    position: relative;
+
+    max-width: 432px;
+    margin: 0;
+    padding-left: 68px;
+
+    font-family: $museo-sans;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 26px;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+
+      height: 47px;
+    }
+    &::before {
+      left: -600px;
+
+      width: 600px;
+
+      background-color: $yellow;
+    }
+    &::after {
+      left: -336px;
+
+      width: 358px;
+
+      background: url('../images/yellow-strip.svg') no-repeat;
+    }
+  }
+
+  &__btn-left {
+    width: 198px;
+    height: 49px;
+
+    color: $white;
+    background-color: $navy-blue;
+
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      color: inherit;
+      background-color: transparent;
+      border: 1px solid black;
+    }
+  }
+
+  &__btn-right {
+    width: 198px;
+    height: 49px;
+
+    background-color: transparent;
+    border: 1px solid black;
+
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      color: $white;
+      background-color: $navy-blue;
+    }
+  }
+}
+
+// Icons for deposit-block__item
+.percent-icon::before,
+.cash-icon::before,
+.diagram-icon::before,
+.dis-floppy-icon::before,
+.percent-down-icon::before,
+.zero-percent-icon::before,
+.floppy-icon::before,
+.percent-up-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 57px;
+  height: 57px;
+}
+.percent-icon::before {
+  background: url('../images/percent-icon.svg') no-repeat;
+}
+.cash-icon::before {
+  background: url('../images/cash-icon.svg') no-repeat;
+}
+.diagram-icon::before {
+  background: url('../images/diagram-icon.svg') no-repeat;
+}
+.dis-floppy-icon::before {
+  background: url('../images/dis-floppy-icon.svg') no-repeat;
+}
+.percent-down-icon::before {
+  background: url('../images/percent-down-icon.svg') no-repeat;
+}
+.zero-percent-icon::before {
+  background: url('../images/zero-percent-icon.png') no-repeat;
+}
+.floppy-icon::before {
+  background: url('../images/floppy-icon.svg') no-repeat;
+}
+.percent-up-icon::before {
+  background: url('../images/percent-up-icon.svg') no-repeat;
+}
+
+// Desktop First Method
+// From: 1230px
+@media #{$media} and #{$large} {
+  .deposit {
+    &__right {
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        width: 257px;
+        height: 286px;
+
+        background: url('../images/deposit-rectangle.png') no-repeat;
+      }
+    }
+  }
+}
+
+// From: 992px to: 1229px
+@media #{$media} and #{$desktop} {
+  .deposit-block {
+    width: 80.5%;
+
+    &__title {
+      margin-bottom: 40px;
+      font-size: 30px;
+    }
+
+    &__item {
+      width: auto;
+
+      &:first-child br {
+        display: none;
+      }
+
+      &:last-child {
+        width: auto;
+      }
+    }
+  }
+}
+
+// From: 0 to: 767px
+@media #{$media} and #{$phone} {
+  .deposit {
+    flex-direction: column;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    &__left {
+      justify-content: center;
+      width: auto;
+    }
+
+    &__right {
+      position: relative;
+
+      justify-content: center;
+      width: auto;
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 50%;
+      }
+      &::before {
+        content: '';
+
+        width: 54px;
+        height: 54px;
+        margin-top: -27px;
+        margin-left: -27px;
+
+        background-color: #0d2843;
+        transform: rotate(45deg);
+      }
+      &::after {
+        content: 'vs';
+
+        margin-top: -13px;
+        margin-left: -13px;
+
+        font-family: $museo-sans;
+        font-size: 27px;
+        font-weight: 500;
+
+        color: $white;
+      }
+    }
+  }
+
+  .deposit-block {
+    width: 85%;
+
+    &--pr-85 {
+      padding-right: 30px;
+    }
+    &--pl-85 {
+      padding-left: 30px;
+    }
+  }
+}
