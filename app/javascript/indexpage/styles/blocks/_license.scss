@@ -1,0 +1,143 @@
+.license {
+  &__title {
+    position: relative;
+
+    max-width: 564px;
+
+    color: $white;
+
+    // helper
+    @include outline-red;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: -20px;
+
+      width: 16px;
+      height: 79px;
+    }
+    &::before {
+      left: 0;
+
+      background: url('../images/left-corners.png') no-repeat;
+    }
+    &::after {
+      right: 0;
+
+      background: url('../images/right-corners.png') no-repeat;
+    }
+  }
+
+  &__wrapper {
+    @include container;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 87px;
+    padding-top: 34px;
+  }
+
+  &__img-block {
+    position: relative;
+
+    margin-bottom: 10px;
+  }
+  &__img {
+    border: 20px solid $yellow;
+  }
+
+  &__description {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    @include flex-center;
+    width: 230px;
+    height: 340px;
+
+    background-color: rgba(13, 40, 67, 0.95);
+    opacity: 0;
+
+    transition: all 0.2s ease-in-out;
+
+    &-text {
+      position: relative;
+
+      display: block;
+      width: 134px;
+
+      font-size: 18px;
+
+      color: $white;
+      text-align: center;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -55px;
+        left: 50%;
+
+        width: 26px;
+        height: 26px;
+        margin-left: -13px;
+
+        background: url('../images/search-icon.svg') no-repeat;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: -80px;
+        left: -30px;
+
+        width: 191px;
+        height: 180px;
+
+        background: url('../images/corners.png') no-repeat;
+      }
+    }
+  }
+  &__description:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+// Desktop First Method
+// From: 1230px
+@media #{$media} and #{$large} {
+  .license {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      width: 116px;
+      height: 326px;
+
+      background: url('../images/license-rectangle.png') no-repeat;
+    }
+  }
+}
+
+// From: 0 to: 767px
+@media #{$media} and #{$phone} {
+  .license__wrapper {
+    justify-content: space-around;
+  }
+}
+
+// From: 0 to: 450px
+@media #{$media} and (max-width: 450px) {
+  .license {
+    &__title::before,
+    &__title::after {
+      top: 0;
+    }
+  }
+}
