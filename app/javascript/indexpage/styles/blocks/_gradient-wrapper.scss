@@ -1,0 +1,21 @@
+.gradient-wrapper {
+  display: flex;
+  align-items: center;
+
+  min-height: 144px;
+
+  background-image: linear-gradient(to right, #0d2843 0%, #22466a 100%);
+
+  &__title {
+    max-width: 867px;
+    margin: 0 auto;
+
+    font-family: $museo-sans;
+    font-size: $h1-font-size;
+    line-height: $h1-line-height;
+    font-weight: 500;
+
+    color: $yellow;
+    text-align: center;
+  }
+}
