@@ -1,3 +1,15 @@
+# Add listener on button for scroll
+$(document).ready ->
+  $('.go-form').on 'click', (e) ->
+    $('html,body').stop().animate { scrollTop: $('.form').offset().top }, 1500
+    e.preventDefault()
+    return
+  $('.header__button').on 'click', (e) ->
+    $('html,body').stop().animate { scrollTop: $('.deposit').offset().top }, 1500
+    e.preventDefault()
+    return
+  return
+
 # Create and insert Yandex.Map
 # Styling Baloon
 ymaps.ready ->
