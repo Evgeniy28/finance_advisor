@@ -1,0 +1,113 @@
+.form {
+  min-height: 304px;
+
+  background-color: #0d2843;
+
+  &__wrapper {
+    @include container;
+
+    padding-bottom: 92px;
+  }
+
+  &__title {
+    padding-top: 55px;
+    padding-bottom: 55px;
+
+    font-family: $museo-sans;
+    font-size: $h1-font-size;
+    line-height: $h1-line-height;
+    font-weight: 500;
+
+    color: $white;
+    text-align: center;
+
+    // helper
+    @include outline-yellow;
+  }
+}
+
+.customer-form {
+  display: flex;
+  justify-content: space-between;
+
+  // helper
+  @include outline-red;
+
+  input[type='text'],
+  input[type='tel'] {
+    width: 332px;
+    height: 53px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding-left: 34px;
+
+
+    border-radius: 2px;
+    background-color: #ffffff;
+
+    border: none;
+    outline: none;
+
+    &::placeholder {
+      font-family: $fg-book;
+      font-size: 18px;
+      font-weight: 300;
+
+      color: $almost-black;
+    }
+  }
+}
+
+.btn-form {
+  width: 370px;
+  height: 55px;
+  margin-right: 0;
+
+  font-family: $fg-medium;
+  font-size: 22px;
+  font-weight: 400;
+
+  border-radius: 2px;
+  background-color: $yellow;
+
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    background-color: darken($yellow, 10%);
+  }
+}
+
+// Desktop First Method
+// From: 768px to: 991px
+@media #{$media} and #{$tablet} {
+  .customer-form {
+    input[type='text'],
+    input[type='tel'] {
+      padding-left: 10px;
+
+      &::placeholder {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+// From: 0 to: 767px
+@media #{$media} and #{$phone} {
+  .form {
+    &__title {
+      font-size: 30px;
+    }
+  }
+
+  .customer-form {
+    justify-content: center;
+    flex-wrap: wrap;
+
+    input[type='text'],
+    input[type='tel'] {
+      width: 356px;
+      margin-right: 0;
+    }
+  }
+}
