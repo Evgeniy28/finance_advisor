@@ -2,9 +2,8 @@ section class='form'
   div class='form__wrapper'
     h1 class='form__title'
       | До 29 апреля у нас действуют особые условия
-      
-    form class='customer-form'
-      input type='text' name='name' placeholder='Представьтесь'
-      input type='tel' name='tel' placeholder='Контактный номер телефона'
-      button class='btn btn-form' type='submit'
-        | Узнайте подробности 
+        
+    = form_for @customer, html: {class: 'customer-form'} do |f|
+      = f.text_field :name, placeholder: 'Представьтесь'
+      = f.telephone_field :phone, placeholder: 'Контактный номер телефона'
+      = f.button 'Узнайте подробности', class: 'btn btn-form'
