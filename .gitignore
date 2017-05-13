@@ -28,3 +28,6 @@ config/database.yml
 
 # Ignore my helper files
 app/javascript/indexpage/styles/utilities/media_helpers.scss
+
+# Ignore application configuration
+/config/application.yml
