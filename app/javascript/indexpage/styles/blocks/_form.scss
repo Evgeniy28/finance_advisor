@@ -27,8 +27,22 @@
 }
 
 .customer-form {
+  position: relative;
+
   display: flex;
   justify-content: space-between;
+
+  &__info {
+    position: absolute;
+    top: -25px;
+    left: 0;
+
+    font-family: $museo-sans;
+    font-size: 24px;
+    line-height: 26px;
+    font-weight: 300;
+    color: red;
+  }
 
   // helper
   @include outline-red;
@@ -55,6 +69,13 @@
 
       color: $almost-black;
     }
+  }
+
+  .input__errors {
+    width: 330px!important;
+    height: 51px!important;
+
+    border: 1px dashed red!important;
   }
 }
 
@@ -103,6 +124,11 @@
   .customer-form {
     justify-content: center;
     flex-wrap: wrap;
+
+    &__info {
+      font-size: 18px;
+      line-height: 20px;
+    }
 
     input[type='text'],
     input[type='tel'] {

@@ -3,7 +3,8 @@ section class='form'
     h1 class='form__title'
       | До 29 апреля у нас действуют особые условия
         
-    = form_for @customer, html: {class: 'customer-form'} do |f|
+    = form_for @customer, html: {class: 'customer-form'}, remote: true do |f|
+      .customer-form__info
       = f.text_field :name, placeholder: 'Представьтесь'
       = f.telephone_field :phone, placeholder: 'Контактный номер телефона'
       = f.button 'Узнайте подробности', class: 'btn btn-form'
