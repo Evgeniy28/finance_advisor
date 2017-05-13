@@ -48,6 +48,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   # Testing framework
   gem 'rspec-rails'
+  # Brings back `assigns` and `assert_template`
+  gem 'rails-controller-testing'
 end
 
 group :test do
