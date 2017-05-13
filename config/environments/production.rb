@@ -90,7 +90,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Configuration for Postmark
-  config.action_mailer.default_url_options = { host: 'finance-advisor.herokuapp.com'}
+  config.action_mailer.default_url_options = { host: 'financeadvisor.herokuapp.com'}
   config.action_mailer.delivery_method = :postmark
   config.action_mailer.postmark_settings = { api_token: ENV['POSTMARK_API_TOKEN'] }
 end
