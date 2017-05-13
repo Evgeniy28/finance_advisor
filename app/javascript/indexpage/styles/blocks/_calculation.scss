@@ -273,10 +273,10 @@
         margin-left: -10px;
       }
       &:nth-child(2n - 1)::before {
-        background: url('../images/list-minus@0.5.svg') no-repeat;
+        background: url('../images/list-minus@0.5.png') no-repeat;
       }
       &:nth-child(2n)::before {
-        background: url('../images/list-plus@0.5.svg') no-repeat;
+        background: url('../images/list-plus@0.5.png') no-repeat;
       }
     }
   }
